@@ -1,6 +1,6 @@
 {
   "name": "taskdo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Runs exports from a javascript file as tasks.",
   "main": "index.js",
   "scripts": {
