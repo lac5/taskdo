@@ -1,6 +1,6 @@
 {
   "name": "taskdo",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Runs exports from a javascript file as tasks.",
   "main": "index.js",
   "scripts": {
@@ -12,8 +12,8 @@
   "author": "Larry <larry.costigan5@gmail.com>",
   "license": "ISC",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/larryc5/taskdo.git"
+    "type": "git",
+    "url": "https://github.com/larryc5/taskdo.git"
   },
   "dependencies": {
     "camelcase": "^5.3.1",

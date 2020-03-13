@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 const { join, dirname } = require('path');
 const camelCase = require('camelcase');
 const requireEsm = require('esm')(module);
