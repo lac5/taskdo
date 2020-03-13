@@ -1,19 +1,24 @@
 #! /usr/bin/env node
-const { join, dirname } = require('path');
+const path = require('path');
 const camelCase = require('camelcase');
 const requireEsm = require('esm')(module);
-let [ , , file, ...tasks ] = process.argv;
+const findUp = require('find-up');
+const tasks = process.argv.slice(2);
 
-file = join(process.cwd(), file);
+findUp('tasks.js').then(function(tasksFile) {
 
-process.chdir(dirname(file));
+    process.chdir(path.dirname(tasksFile));
 
-const moduleA = requireEsm(file);
+    const moduleA = requireEsm(tasksFile);
+    
+    if (tasks.length > 0) {
+        return tasks.reduce(function(p, task) {
+            return p.then(function(data) {
+                return moduleA[camelCase(task)].call(moduleA, data);
+            });
+        }, Promise.resolve());
+    } else {
+        return moduleA.default.call(moduleA);
+    }
 
-if (tasks.length > 0) {
-    tasks.reduce(async (p, task) => {
-        return p.then(data => moduleA[camelCase(task)].call(moduleA, data));
-    }, Promise.resolve()).catch(console.error);
-} else {
-    Promise.resolve(moduleA.default.call(moduleA)).catch(console.error);
-}
+}).catch(console.error);

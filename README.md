@@ -14,7 +14,7 @@ or install locally
 
 Example:
 
-`hello.js`
+`tasks.js`
 ```js
 exports.hello = function() {
     console.log('Hello!');
@@ -30,13 +30,13 @@ export function hello() {
 
 Then run this:
 ```
-> taskdo hello.js hello
+> taskdo hello
 Hello!
 ```
 
 If no arguments are passed, it will try to run the default task.
 
-`hello.js`
+`tasks.js`
 ```js
 exports.default = function() {
     console.log('Hello!');
@@ -50,7 +50,7 @@ export default function() {
 ```
 
 ```
-> taskdo hello.js
+> taskdo
 Hello!
 ```
 
@@ -101,11 +101,11 @@ export async function webpack() {
 }
 ```
 
-`tasks.js` will be able to run the tasks `build-sass`, `build-hbs`, and `webpack`.
+`taskdo` will be able to run the tasks `build-sass`, `build-hbs`, and `webpack`.
 
 You run each of them in order like this:
 ```
-> taskdo tasks.js build-sass build-hbs webpack
+> taskdo build-sass build-hbs webpack
 ```
 
 NOTE: Each task will run after the previous one finishes. Also, if one fails, the tasks after it won't run.
@@ -123,13 +123,13 @@ export async function build() {
 
 Then run:
 ```
-> taskdo tasks.js build
+> taskdo build
 ```
 
 You can also call it from `package.json`:
 ```json
     "scripts": {
-        "build": "taskdo tasks.js build",
+        "build": "taskdo build",
     }
 ```
 
