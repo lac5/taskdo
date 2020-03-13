@@ -1,6 +1,6 @@
 {
   "name": "taskdo",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Runs exports from a javascript file as tasks.",
   "main": "index.js",
   "scripts": {
@@ -18,5 +18,20 @@
   "dependencies": {
     "camelcase": "^5.3.1",
     "esm": "^3.2.25"
-  }
+  },
+  "keywords": [
+    "task",
+    "script",
+    "build",
+    "stream",
+    "system",
+    "make",
+    "tool",
+    "asset",
+    "pipeline",
+    "series",
+    "parallel",
+    "streaming"
+  ]
 }
+  
