@@ -1,15 +1,15 @@
-# nodedo
+# taskdo
 Runs exports from a javascript file as tasks, similar to gulp but simple and fexible.
 
 Install:
 
 ```
-> npm install -g nodedo
+> npm install -g taskdo
 ```
 
 or install locally
 ```
-> npm install --save-dev nodedo
+> npm install --save-dev taskdo
 ```
 
 Example:
@@ -30,7 +30,7 @@ export function hello() {
 
 Then run this:
 ```
-> nodedo hello.js hello
+> taskdo hello.js hello
 Hello!
 ```
 
@@ -50,7 +50,7 @@ export default function() {
 ```
 
 ```
-> nodedo hello.js
+> taskdo hello.js
 Hello!
 ```
 
@@ -105,7 +105,7 @@ export async function webpack() {
 
 You run each of them in order like this:
 ```
-> nodedo tasks.js build-sass build-hbs webpack
+> taskdo tasks.js build-sass build-hbs webpack
 ```
 
 NOTE: Each task will run after the previous one finishes. Also, if one fails, the tasks after it won't run.
@@ -123,13 +123,13 @@ export async function build() {
 
 Then run:
 ```
-> nodedo tasks.js build
+> taskdo tasks.js build
 ```
 
 You can also call it from `package.json`:
 ```json
     "scripts": {
-        "build": "nodedo tasks.js build",
+        "build": "taskdo tasks.js build",
     }
 ```
 
@@ -137,6 +137,6 @@ You can also call it from `package.json`:
 > npm run build
 ```
 
-This way you'll be able to use the locally installed version of `nodedo`.
+This way you'll be able to use the locally installed version of `taskdo`.
 
-If you have any questions, shoot me an email! Or post an [issue on GitHub](https://github.com/larryc5/nodedo/issues).
+If you have any questions, shoot me an email! Or post an [issue on GitHub](https://github.com/larryc5/taskdo/issues).

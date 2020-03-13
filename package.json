@@ -1,16 +1,20 @@
 {
-  "name": "nodedo",
-  "version": "0.1.0",
-  "description": "",
+  "name": "taskdo",
+  "version": "1.0.0",
+  "description": "Runs exports from a javascript file as tasks.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "nodedo": "./index.js"
+    "taskdo": "./index.js"
   },
-  "author": "",
+  "author": "Larry <larry.costigan5@gmail.com>",
   "license": "ISC",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/larryc5/taskdo.git"
+  },
   "dependencies": {
     "camelcase": "^5.3.1",
     "esm": "^3.2.25"
